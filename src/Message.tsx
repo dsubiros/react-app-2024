@@ -1,7 +1,7 @@
 
 function Message() {
     const name = 'Dariel';
-
+    
     if (name)
         return <h1>Hello {name}</h1>;
     
