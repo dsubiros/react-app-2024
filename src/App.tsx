@@ -1,8 +1,12 @@
+import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 
 function App() {
+  const [message, setMessage] = useState("");
+  const [count, setCount] = useState(1);
+
   let items = ["New York", "San Francisco", "Tokyo", "London"];
 
   const handleSelectItem = (item: string): void =>
@@ -10,13 +14,23 @@ function App() {
 
   return (
     <>
-      <Alert>Hello <strong>World</strong></Alert>
-      <Button color="primary" onClick={() => console.warn('Clicked!!!!!!')}>The Button 2</Button>
-      <ListGroup
+      {message && <Alert onClose={() => setMessage("")}>{message}</Alert>}
+      <Button
+        color="primary"
+        onClick={() => {
+          console.warn("Clicked!!!!!!");
+          setMessage(`Message ${count}`);
+          setCount(count + 1);
+        }}
+      >
+        My Button
+      </Button>
+
+      {/* <ListGroup
         items={items}
         heading="Ratata"
         onSelectItem={handleSelectItem}
-      />
+      /> */}
     </>
   );
 }
