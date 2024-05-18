@@ -2,6 +2,8 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import './App.css';
+
 
 function App() {
   const [message, setMessage] = useState("");
@@ -26,11 +28,11 @@ function App() {
         My Button
       </Button>
 
-      {/* <ListGroup
+      <ListGroup
         items={items}
         heading="Ratata"
         onSelectItem={handleSelectItem}
-      /> */}
+      />
     </>
   );
 }
