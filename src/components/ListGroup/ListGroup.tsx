@@ -3,8 +3,8 @@ import styles from "./ListGroup.css";
 import styled from "styled-components";
 
 const List = styled.ul`
-   list-style: none;
-   padding: 10px;
+  list-style: none;
+  padding: 10px;
 `;
 
 interface ListItemProps {
@@ -12,8 +12,8 @@ interface ListItemProps {
 }
 
 const ListItem = styled.li<ListItemProps>`
-   padding: 5px 0;
-   background: ${props => props.active ? 'blue': 'none'}
+  padding: 5px 0;
+  background: ${(props) => (props.active ? "blue" : "none")};
 `;
 
 export interface Props {
@@ -34,7 +34,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
       <h1>{heading}</h1>
       {!items.length && <p>No items were found</p>}
       {/* <ul className={[styles.listGroup, styles.container].join(" ")}> */}
-      <List 
+      <List
       // className={[styles.listGroup, styles.container].join(" ")}
       >
         {items.map((x, idx) => (
