@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import produce from "immer";
 
 const App8 = () => {
   const [game, setGame] = useState({
@@ -9,6 +10,8 @@ const App8 = () => {
   });
 
   const handleClick = () => {
+
+    produce();
     setState({
       ...game, player: {...game.player, na}
     })
